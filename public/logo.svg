@@ -1,0 +1,51 @@
+<svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Veriflect</title>
+  <desc>Hexagonal stamp seal with a V-checkmark in trust-turquoise on market-night</desc>
+
+  <!-- Outer hex stamp ring -->
+  <polygon points="200,40 340,120 340,280 200,360 60,280 60,120" fill="#111827"/>
+  <!-- Turquoise border ring -->
+  <polygon points="200,56 326,129 326,271 200,344 74,271 74,129" fill="#18C7B8"/>
+  <!-- Dark core -->
+  <polygon points="200,74 310,142 310,258 200,326 90,258 90,142" fill="#111827"/>
+
+  <!-- Dot pattern -->
+  <g fill="#18C7B8" opacity="0.18">
+    <circle cx="132" cy="162" r="2.8"/><circle cx="152" cy="162" r="2.8"/><circle cx="172" cy="162" r="2.8"/>
+    <circle cx="192" cy="162" r="2.8"/><circle cx="212" cy="162" r="2.8"/><circle cx="232" cy="162" r="2.8"/>
+    <circle cx="252" cy="162" r="2.8"/><circle cx="272" cy="162" r="2.8"/>
+    <circle cx="122" cy="182" r="2.8"/><circle cx="142" cy="182" r="2.8"/><circle cx="162" cy="182" r="2.8"/>
+    <circle cx="182" cy="182" r="2.8"/><circle cx="202" cy="182" r="2.8"/><circle cx="222" cy="182" r="2.8"/>
+    <circle cx="242" cy="182" r="2.8"/><circle cx="262" cy="182" r="2.8"/><circle cx="282" cy="182" r="2.8"/>
+    <circle cx="122" cy="202" r="2.8"/><circle cx="142" cy="202" r="2.8"/><circle cx="162" cy="202" r="2.8"/>
+    <circle cx="182" cy="202" r="2.8"/><circle cx="202" cy="202" r="2.8"/><circle cx="222" cy="202" r="2.8"/>
+    <circle cx="242" cy="202" r="2.8"/><circle cx="262" cy="202" r="2.8"/><circle cx="282" cy="202" r="2.8"/>
+    <circle cx="122" cy="222" r="2.8"/><circle cx="142" cy="222" r="2.8"/><circle cx="162" cy="222" r="2.8"/>
+    <circle cx="182" cy="222" r="2.8"/><circle cx="202" cy="222" r="2.8"/><circle cx="222" cy="222" r="2.8"/>
+    <circle cx="242" cy="222" r="2.8"/><circle cx="262" cy="222" r="2.8"/><circle cx="282" cy="222" r="2.8"/>
+    <circle cx="132" cy="242" r="2.8"/><circle cx="152" cy="242" r="2.8"/><circle cx="172" cy="242" r="2.8"/>
+    <circle cx="192" cy="242" r="2.8"/><circle cx="212" cy="242" r="2.8"/><circle cx="232" cy="242" r="2.8"/>
+    <circle cx="252" cy="242" r="2.8"/><circle cx="272" cy="242" r="2.8"/>
+  </g>
+
+  <!-- V-checkmark -->
+  <polyline
+    points="146,164 186,252 268,147"
+    fill="none"
+    stroke="#18C7B8"
+    stroke-width="24"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Wordmark -->
+  <text
+    x="200" y="400"
+    text-anchor="middle"
+    font-family="'Bricolage Grotesque','Arial Black',sans-serif"
+    font-size="30"
+    font-weight="800"
+    letter-spacing="5"
+    fill="#111827"
+  >VERIFLECT</text>
+</svg>

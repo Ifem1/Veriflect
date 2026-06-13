@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bazaar-cream: #fff6e5;
+  --ink-cocoa: #2a1e17;
+}
+
+html,
+body {
+  min-height: 100%;
+  background-color: var(--bazaar-cream);
+  color: var(--ink-cocoa);
+}
+
+body {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-space-mono), monospace;
+}
+
+.tile-card {
+  border: 1px solid #2a1e17;
+  background: #fff;
+  box-shadow: 2px 2px 0 0 #2a1e17;
+}
+
+.pattern-tapestry {
+  background-image:
+    repeating-linear-gradient(45deg, rgba(67, 56, 202, 0.08) 0 8px, transparent 8px 16px),
+    repeating-linear-gradient(-45deg, rgba(192, 132, 252, 0.08) 0 8px, transparent 8px 16px);
+}
+
+.paper-panel {
+  border: 2px solid #2a1e17;
+  background: #fff;
+}
+
+.section-shell {
+  border: 2px solid #2a1e17;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.tight-grid {
+  display: grid;
+  gap: 1rem;
+}
