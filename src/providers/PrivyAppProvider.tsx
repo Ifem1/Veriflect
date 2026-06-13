@@ -42,7 +42,7 @@ export function PrivyAppProvider({ children }: { children: React.ReactNode }) {
           },
         },
         externalWallets: {
-          coinbaseWallet: { connectionOptions: "all" },
+          coinbaseWallet: { config: {} },
         },
         defaultChain: studionetChain as any,
         supportedChains: [studionetChain as any],
