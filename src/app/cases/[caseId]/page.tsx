@@ -126,7 +126,8 @@ function CaseDetailInner() {
           </div>
 
           {polling && (
-            <div className="mt-3 text-xs font-mono text-trust-turquoise">
+            <div className="mt-3 flex items-center gap-2 text-xs font-mono text-trust-turquoise">
+              <span className="stamp-seal-spinning inline-block text-base">◆</span>
               Waiting for GenLayer validators… polling every 10s
             </div>
           )}
@@ -143,6 +144,11 @@ function CaseDetailInner() {
         <AuthenticityStamp review={review} />
       ) : (
         <section className="tile-card p-6 text-center">
+          {c.status === "UNDER_REVIEW" && (
+            <div className="flex justify-center mb-4">
+              <span className="stamp-seal-spinning inline-block text-5xl text-trust-turquoise">◆</span>
+            </div>
+          )}
           <div className="font-heading text-xl">
             {c.status === "UNDER_REVIEW" ? "UNDER REVIEW — GenLayer validators are working" : "AWAITING AUTHENTICITY REVIEW"}
           </div>

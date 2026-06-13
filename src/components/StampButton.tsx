@@ -22,7 +22,7 @@ export function StampButton({ variant = "primary", className = "", children, ...
     <button
       {...rest}
       className={[
-        "inline-flex items-center justify-center border-2 px-5 py-2.5 text-sm font-heading uppercase tracking-wide transition active:translate-x-[1px] active:translate-y-[1px] active:shadow-none disabled:cursor-not-allowed disabled:opacity-50",
+        "stamp-btn inline-flex items-center justify-center border-2 px-5 py-2.5 text-sm font-heading uppercase tracking-wide transition disabled:cursor-not-allowed disabled:opacity-50",
         styles[variant],
         className,
       ].join(" ")}

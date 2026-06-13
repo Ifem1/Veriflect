@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const stampRail = [
   { label: "GENUINE", cls: "bg-authentic-jade text-bazaar-cream" },
@@ -20,32 +23,84 @@ const tiles = [
   { stars: 2, text: "Not as described", cls: "bg-seller-saffron/25" },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 22 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.12, ease: "easeOut" as const },
+  }),
+};
+
 export default function Home() {
   return (
     <div className="space-y-16">
 
       {/* Hero */}
-      <section className="grid lg:grid-cols-[1fr_1.4fr_0.65fr] gap-8 items-start">
-        <div>
-          <h1 className="font-heading text-5xl md:text-6xl leading-[1.05]">Veriflect</h1>
-          <p className="mt-4 text-lg opacity-80">
+      <section className="relative grid lg:grid-cols-[1fr_1.4fr_0.65fr] gap-8 items-start overflow-hidden">
+        {/* Slow-drifting tapestry overlay */}
+        <div className="absolute inset-0 hero-drift pointer-events-none" aria-hidden />
+
+        {/* Left: headline column */}
+        <div className="relative z-10">
+          <motion.h1
+            className="font-heading text-5xl md:text-6xl leading-[1.05]"
+            custom={0}
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+          >
+            Veriflect
+          </motion.h1>
+          <motion.p
+            className="mt-4 text-lg opacity-80"
+            custom={1}
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+          >
             Product review authenticity judged by context and consensus.
-          </p>
-          <p className="mt-2 text-xs font-mono uppercase text-pattern-indigo">
+          </motion.p>
+          <motion.p
+            className="mt-2 text-xs font-mono uppercase text-pattern-indigo"
+            custom={2}
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+          >
             Signal Bazaar · GenLayer Studionet
-          </p>
-          <p className="mt-6 text-sm leading-relaxed">
+          </motion.p>
+          <motion.p
+            className="mt-6 text-sm leading-relaxed"
+            custom={3}
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+          >
             Pattern detection surfaces signals. GenLayer validators judge whether reviews appear
             genuine, coordinated, incentivised, or bot-generated — with reasoning and a marketplace
             recommendation.
-          </p>
-          <p className="mt-4 text-sm">
+          </motion.p>
+          <motion.p
+            className="mt-4 text-sm"
+            custom={4}
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+          >
             Sign in with <strong>email</strong>. Privy creates your embedded wallet automatically.
             No MetaMask needed.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="border-2 border-ink-cocoa pattern-tapestry p-5">
+        {/* Middle: signal wall */}
+        <motion.div
+          className="relative z-10 border-2 border-ink-cocoa pattern-tapestry p-5"
+          custom={2}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+        >
           <div className="text-xs font-mono uppercase mb-3 opacity-70">Bazaar signal wall</div>
           <div className="grid grid-cols-3 gap-2">
             {tiles.map((t, i) => (
@@ -56,9 +111,16 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-3 text-xs opacity-60 italic">Visual placeholders — no reviews are fabricated.</p>
-        </div>
+        </motion.div>
 
-        <div className="border-2 border-ink-cocoa bg-market-night text-bazaar-cream p-4">
+        {/* Right: authenticity rail */}
+        <motion.div
+          className="relative z-10 border-2 border-ink-cocoa bg-market-night text-bazaar-cream p-4"
+          custom={3}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+        >
           <div className="text-xs font-mono uppercase opacity-60 mb-3">Authenticity rail</div>
           <ul className="space-y-2">
             {stampRail.map((s) => (
@@ -69,17 +131,17 @@ export default function Home() {
           </ul>
           <Link
             href="/create-case"
-            className="mt-5 block text-center bg-trust-turquoise text-market-night font-heading uppercase py-3 border-2 border-bazaar-cream shadow-stamp text-sm"
+            className="stamp-btn mt-5 block text-center bg-trust-turquoise text-market-night font-heading uppercase py-3 border-2 border-bazaar-cream shadow-stamp text-sm"
           >
             ◆ Open Authenticity Case
           </Link>
           <Link
             href="/moderator"
-            className="mt-3 block text-center bg-bazaar-cream text-pattern-indigo font-mono uppercase text-xs py-2 border border-pattern-indigo"
+            className="stamp-btn mt-3 block text-center bg-bazaar-cream text-pattern-indigo font-mono uppercase text-xs py-2 border border-pattern-indigo"
           >
             Moderation Queue
           </Link>
-        </div>
+        </motion.div>
       </section>
 
       {/* Role cards */}
@@ -131,7 +193,7 @@ export default function Home() {
 
 function RoleCard({ title, href, cls, children }: { title: string; href: string; cls: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className={`block border-2 border-ink-cocoa p-5 hover:-translate-y-px transition ${cls}`}>
+    <Link href={href} className={`tile-card-hover block border-2 border-ink-cocoa p-5 transition-all duration-200 ${cls}`}>
       <div className="font-heading text-base">{title}</div>
       <p className="mt-2 text-xs leading-relaxed opacity-80">{children}</p>
     </Link>

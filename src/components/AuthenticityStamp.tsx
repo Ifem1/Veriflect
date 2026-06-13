@@ -24,7 +24,7 @@ const riskColor: Record<RiskLevel, string> = {
 
 export function AuthenticityStamp({ review }: { review: AuthenticityReview }) {
   return (
-    <section className="tile-card p-6 relative">
+    <section className="tile-card p-6 relative stamp-seal-dropped">
       <div className="absolute -top-3 left-6 bg-market-night text-bazaar-cream px-3 py-1 text-xs font-mono uppercase">
         Authenticity Stamp · GenLayer consensus
       </div>
