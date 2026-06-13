@@ -5,7 +5,7 @@ import { PrivyAppProvider } from "@/providers/PrivyAppProvider";
 import dynamic from "next/dynamic";
 import { ConfigBanner } from "@/components/ConfigBanner";
 
-const Nav = dynamic(() => import("@/components/Nav").then((m) => m.Nav), { ssr: false });
+const Nav = dynamic(async () => { const { Nav } = await import("@/components/Nav"); return Nav; }, { ssr: false });
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
