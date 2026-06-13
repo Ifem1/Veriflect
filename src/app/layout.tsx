@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Outfit, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { PrivyAppProvider } from "@/providers/PrivyAppProvider";
-import dynamic from "next/dynamic";
+import ClientNav from "@/components/ClientNav";
 import { ConfigBanner } from "@/components/ConfigBanner";
-
-const Nav = dynamic(async () => { const { Nav } = await import("@/components/Nav"); return Nav; }, { ssr: false });
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -46,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="min-h-screen bg-bazaar-cream text-ink-cocoa">
         <PrivyAppProvider>
-          <Nav />
+          <ClientNav />
           <ConfigBanner />
           <main className="mx-auto max-w-7xl px-6 py-10">{children}</main>
           <footer className="mt-20 border-t border-ink-cocoa/20 bg-market-night text-bazaar-cream">
