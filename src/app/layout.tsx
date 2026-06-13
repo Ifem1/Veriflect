@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Outfit, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { PrivyAppProvider } from "@/providers/PrivyAppProvider";
-import { Nav } from "@/components/Nav";
+import dynamic from "next/dynamic";
 import { ConfigBanner } from "@/components/ConfigBanner";
+
+const Nav = dynamic(() => import("@/components/Nav").then((m) => m.Nav), { ssr: false });
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
